@@ -1,0 +1,155 @@
+.method-tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    background: var(--white);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.tab-btn:hover {
+    background: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-1px);
+}
+
+.tab-btn.active {
+    background: var(--primary-color);
+    color: var(--white);
+    box-shadow: 0 2px 4px rgba(30, 144, 255, 0.2);
+}
+
+.operation-toggle {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    background: var(--background);
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+.toggle-btn {
+    flex: 1;
+    padding: 0.75rem;
+    border: none;
+    background: transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.toggle-btn:hover {
+    background: rgba(30, 144, 255, 0.1);
+}
+
+.toggle-btn.active {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.method-content {
+    display: none;
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.method-content.active {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.method-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.method-header i {
+    color: var(--primary-color);
+}
+
+.method-description {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(30, 144, 255, 0.1);
+}
+
+.input-group textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.divider {
+    position: relative;
+    height: 1px;
+    background: var(--border-color);
+    margin: 2rem 0;
+}
+
+.divider i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--white);
+    padding: 0.5rem;
+    color: var(--primary-color);
+}
+
+.icon-large {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

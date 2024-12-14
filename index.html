@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encryption Methods</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="https://unpkg.com/lucide-static/font/lucide.css">
+</head>
+<body>
+    <header class="welcome-section">
+        <div class="container">
+            <i class="lucide-book-open icon-large"></i>
+            <h1>Welcome to Encryption Methods</h1>
+            <p>Discover the fascinating world of cryptography through interactive examples and hands-on learning.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="encryption-methods">
+            <h2>Try Different Encryption Methods</h2>
+            
+            <div class="method-tabs">
+                <button class="tab-btn active" data-method="caesar">Caesar Cipher</button>
+                <button class="tab-btn" data-method="playfair">Playfair Cipher</button>
+                <button class="tab-btn" data-method="vigenere">Vigenère Cipher</button>
+                <button class="tab-btn" data-method="transposition">Transposition Matrix</button>
+            </div>
+
+            <div class="encryption-container">
+                <!-- Caesar Cipher -->
+                <div id="caesar" class="method-content active">
+                    <div class="method-header">
+                        <i class="lucide-lock"></i>
+                        <h3>Caesar Cipher</h3>
+                    </div>
+                    <p class="method-description">Shifts each letter in the text by a fixed number of positions in the alphabet.</p>
+                    <div class="operation-toggle">
+                        <button class="toggle-btn active" data-operation="encrypt">Encrypt</button>
+                        <button class="toggle-btn" data-operation="decrypt">Decrypt</button>
+                    </div>
+                    <div class="input-group">
+                        <label for="caesar-shift">Shift Value (1-25)</label>
+                        <input type="number" id="caesar-shift" min="1" max="25" value="3">
+                    </div>
+                    <div class="input-group">
+                        <label for="caesar-input">Input Text</label>
+                        <textarea id="caesar-input" placeholder="Enter text..."></textarea>
+                    </div>
+                    <div class="divider">
+                        <i class="lucide-rotate-cw"></i>
+                    </div>
+                    <div class="input-group">
+                        <label>Output Text</label>
+                        <textarea id="caesar-output" readonly></textarea>
+                    </div>
+                </div>
+
+                <!-- Playfair Cipher -->
+                <div id="playfair" class="method-content">
+                    <div class="method-header">
+                        <i class="lucide-grid"></i>
+                        <h3>Playfair Cipher</h3>
+                    </div>
+                    <p class="method-description">Encrypts pairs of letters using a 5x5 key matrix.</p>
+                    <div class="operation-toggle">
+                        <button class="toggle-btn active" data-operation="encrypt">Encrypt</button>
+                        <button class="toggle-btn" data-operation="decrypt">Decrypt</button>
+                    </div>
+                    <div class="input-group">
+                        <label for="playfair-key">Key Word</label>
+                        <input type="text" id="playfair-key" placeholder="Enter key word">
+                    </div>
+                    <div class="input-group">
+                        <label for="playfair-input">Input Text</label>
+                        <textarea id="playfair-input" placeholder="Enter text..."></textarea>
+                    </div>
+                    <div class="divider">
+                        <i class="lucide-rotate-cw"></i>
+                    </div>
+                    <div class="input-group">
+                        <label>Output Text</label>
+                        <textarea id="playfair-output" readonly></textarea>
+                    </div>
+                </div>
+
+                <!-- Vigenère Cipher -->
+                <div id="vigenere" class="method-content">
+                    <div class="method-header">
+                        <i class="lucide-key-square"></i>
+                        <h3>Vigenère Cipher</h3>
+                    </div>
+                    <p class="method-description">Uses a keyword to shift each letter by varying amounts.</p>
+                    <div class="operation-toggle">
+                        <button class="toggle-btn active" data-operation="encrypt">Encrypt</button>
+                        <button class="toggle-btn" data-operation="decrypt">Decrypt</button>
+                    </div>
+                    <div class="input-group">
+                        <label for="vigenere-key">Key Word</label>
+                        <input type="text" id="vigenere-key" placeholder="Enter key word">
+                    </div>
+                    <div class="input-group">
+                        <label for="vigenere-input">Input Text</label>
+                        <textarea id="vigenere-input" placeholder="Enter text..."></textarea>
+                    </div>
+                    <div class="divider">
+                        <i class="lucide-rotate-cw"></i>
+                    </div>
+                    <div class="input-group">
+                        <label>Output Text</label>
+                        <textarea id="vigenere-output" readonly></textarea>
+                    </div>
+                </div>
+
+                <!-- Transposition Matrix -->
+                <div id="transposition" class="method-content">
+                    <div class="method-header">
+                        <i class="lucide-align-justify"></i>
+                        <h3>Transposition Matrix</h3>
+                    </div>
+                    <p class="method-description">Rearranges letters in a grid pattern based on a key.</p>
+                    <div class="operation-toggle">
+                        <button class="toggle-btn active" data-operation="encrypt">Encrypt</button>
+                        <button class="toggle-btn" data-operation="decrypt">Decrypt</button>
+                    </div>
+                    <div class="input-group">
+                        <label for="transposition-key">Key (number of columns)</label>
+                        <input type="number" id="transposition-key" min="2" max="10" value="4">
+                    </div>
+                    <div class="input-group">
+                        <label for="transposition-input">Input Text</label>
+                        <textarea id="transposition-input" placeholder="Enter text..."></textarea>
+                    </div>
+                    <div class="divider">
+                        <i class="lucide-rotate-cw"></i>
+                    </div>
+                    <div class="input-group">
+                        <label>Output Text</label>
+                        <textarea id="transposition-output" readonly></textarea>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Encryption Methods. All rights reserved.</p>
+            <p class="credits">Developed by Abdelrahman Mahmoud and Ahmed Sobhi</p>
+        </div>
+    </footer>
+
+    <script src="js/utils/validation.js"></script>
+    <script src="js/utils/dom.js"></script>
+    <script src="js/encryption/caesar.js"></script>
+    <script src="js/encryption/playfair.js"></script>
+    <script src="js/encryption/vigenere.js"></script>
+    <script src="js/encryption/transposition.js"></script>
+    <script src="js/components/tabs.js"></script>
+    <script src="js/components/operation-toggle.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
